@@ -9,4 +9,5 @@
     <dimen name="keyline_medium_12dp">12dp</dimen>
     <dimen name="keyline_medium_8dp">8dp</dimen>
     <dimen name="keyline_small_4dp">4dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
 </resources>

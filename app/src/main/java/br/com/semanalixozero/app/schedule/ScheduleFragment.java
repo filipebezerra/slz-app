@@ -15,6 +15,7 @@ import java.util.Locale;
 
 import br.com.semanalixozero.app.R;
 import br.com.semanalixozero.app.base.BaseFragment;
+import br.com.semanalixozero.app.event.EventsFragment;
 import br.com.semanalixozero.app.view.TabsFragmentAdapter;
 import butterknife.BindView;
 

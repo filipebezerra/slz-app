@@ -1,5 +1,6 @@
-package br.com.semanalixozero.app.schedule;
+package br.com.semanalixozero.app.event;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.DividerItemDecoration;
@@ -11,6 +12,9 @@ import java.util.List;
 
 import br.com.semanalixozero.app.R;
 import br.com.semanalixozero.app.base.BaseFragment;
+import br.com.semanalixozero.app.eventdetail.EventDetailActivity;
+import br.com.semanalixozero.app.recyclerview.ItemTouchListenerImpl;
+import br.com.semanalixozero.app.recyclerview.OnItemTouchListener;
 import butterknife.BindView;
 
 import static android.support.v7.widget.DividerItemDecoration.VERTICAL;
@@ -54,5 +58,20 @@ public class EventsFragment extends BaseFragment implements EventsContract.View 
         recyclerView.setAdapter(eventAdapter);
         //recyclerView.addItemDecoration(new StickyRecyclerHeadersDecoration(eventAdapter));
         recyclerView.addItemDecoration(new DividerItemDecoration(getContext(), VERTICAL));
+        recyclerView.addOnItemTouchListener(
+                new ItemTouchListenerImpl(getContext(), recyclerView,
+                        new OnItemTouchListener() {
+                            @Override public void onSingleTapUp(View view, int position) {
+                                presenter.clickOnEvent(position);
+                            }
+
+                            @Override public void onLongPress(View view, int position) {}
+                        }));
+    }
+
+    @Override public void navigateToEventDetail(Event selectedEvent) {
+        Intent intent = new Intent(getContext(), EventDetailActivity.class)
+                .putExtra(EventDetailActivity.EXTRA_EVENT, selectedEvent);
+        startActivity(intent);
     }
 }

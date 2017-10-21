@@ -7,13 +7,13 @@ interface AboutUsContract {
 
     interface View {
 
-        void openWebSite(String uriString);
+        void openSite(String uriString);
     }
 
     interface Presenter {
 
-        void openIlzbSite();
+        void clickButtonVisitIlzbSite();
 
-        void openSrzSite();
+        void clickButtonVisitSrzSite();
     }
 }

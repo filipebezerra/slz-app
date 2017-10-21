@@ -33,14 +33,14 @@ public class AboutUsFragment extends BaseFragment implements AboutUsContract.Vie
     }
 
     @OnClick(R.id.button_visit_ilzb_site) void onClickButtonVisitIlzbSite() {
-        presenter.openIlzbSite();
+        presenter.clickButtonVisitIlzbSite();
     }
 
     @OnClick(R.id.button_visit_srz_site) void onClickButtonVisitSrzSite() {
-        presenter.openSrzSite();
+        presenter.clickButtonVisitSrzSite();
     }
 
-    @Override public void openWebSite(String uriString) {
+    @Override public void openSite(String uriString) {
         CustomTabsIntent customTabsIntent = new CustomTabsIntent.Builder()
                 .setToolbarColor(getColor(getContext(), R.color.primary))
                 .setShowTitle(true)

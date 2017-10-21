@@ -1,4 +1,4 @@
-package br.com.semanalixozero.app.schedule;
+package br.com.semanalixozero.app.event;
 
 import java.util.List;
 
@@ -14,5 +14,10 @@ class EventsPresenter implements EventsContract.Presenter {
         this.view = view;
         this.events = events;
         view.showEvents(this.events);
+    }
+
+    @Override public void clickOnEvent(int position) {
+        final Event selectedEvent = events.get(position);
+        view.navigateToEventDetail(selectedEvent);
     }
 }

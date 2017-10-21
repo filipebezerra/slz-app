@@ -1,4 +1,4 @@
-package br.com.semanalixozero.app.schedule;
+package br.com.semanalixozero.app.event;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;

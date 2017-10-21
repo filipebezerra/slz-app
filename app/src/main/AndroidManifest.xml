@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    package="br.com.semanalixozero.app"
-    android:installLocation="auto"
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          xmlns:tools="http://schemas.android.com/tools"
+          package="br.com.semanalixozero.app"
+          android:installLocation="auto"
     >
 
     <application
@@ -19,12 +18,26 @@
             android:name=".navigation.NavigationActivity"
             android:label="${applicationLabel}"
             android:theme="@style/SemanaLixoZero.NoActionBar"
+            android:launchMode="singleTop"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize"
             >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".eventdetail.EventDetailActivity"
+            android:parentActivityName=".navigation.NavigationActivity"
+            android:theme="@style/SemanaLixoZero.NoActionBar"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize"
+            >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="br.com.semanalixozero.app.navigation.NavigationActivity"
+                />
         </activity>
     </application>
 

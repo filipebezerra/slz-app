@@ -4,13 +4,12 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:gravity="center_vertical"
+    android:layout_height="match_parent"
     android:orientation="vertical"
-    android:paddingBottom="@dimen/keyline_medium_8dp"
-    android:paddingLeft="@dimen/keyline_large_16dp"
-    android:paddingRight="@dimen/keyline_large_16dp"
-    android:paddingTop="@dimen/keyline_medium_8dp"
+    android:padding="@dimen/keyline_large_16dp"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".eventdetail.EventDetailActivity"
+    tools:showIn="@layout/activity_event_detail"
     >
 
     <com.devspark.robototextview.widget.RobotoTextView
@@ -20,26 +19,25 @@
         android:paddingBottom="@dimen/keyline_medium_12dp"
         android:textAppearance="@style/TextAppearance.AppCompat.Title"
         app:robotoTypeface="roboto_black"
-        tools:text="ABERTURA SEMANA LIXO ZERO 2017"
+        tools:text="Abertura SEMANA LIXO ZERO GOIÂNIA 2017"
         />
 
     <com.devspark.robototextview.widget.RobotoTextView
-        android:id="@+id/text_view_place_name"
+        android:id="@+id/text_view_time"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:paddingBottom="@dimen/keyline_medium_12dp"
-        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
         app:robotoTypeface="roboto_light"
-        tools:text="Auditório do SECOVI"
+        tools:text="sex, 20 de outubro 08h00-12h00"
         />
 
     <com.devspark.robototextview.widget.RobotoTextView
-        android:id="@+id/text_view_starts_at"
+        android:id="@+id/text_view_description"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:paddingBottom="@dimen/keyline_medium_12dp"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
         app:robotoTypeface="roboto_light"
-        tools:text="Começa às 08h"
+        tools:text="Cerimônia de ABERTURA da SLZ 2017-Goiânia com presença do Setor Público, Privado e terceiro Setor."
         />
 </LinearLayout>

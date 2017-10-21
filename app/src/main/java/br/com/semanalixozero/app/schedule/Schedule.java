@@ -2,6 +2,8 @@ package br.com.semanalixozero.app.schedule;
 
 import java.util.List;
 
+import br.com.semanalixozero.app.event.Event;
+
 /**
  * @author Filipe Bezerra
  */

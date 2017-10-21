@@ -11,11 +11,11 @@ class AboutUsPresenter implements AboutUsContract.Presenter {
         this.view = view;
     }
 
-    @Override public void openIlzbSite() {
-        view.openWebSite("http://ilzb.org/");
+    @Override public void clickButtonVisitIlzbSite() {
+        view.openSite("http://ilzb.org/");
     }
 
-    @Override public void openSrzSite() {
-        view.openWebSite("http://residuozero.org.br/goias/");
+    @Override public void clickButtonVisitSrzSite() {
+        view.openSite("http://residuozero.org.br/goias/");
     }
 }

@@ -1,4 +1,4 @@
-package br.com.semanalixozero.app.schedule;
+package br.com.semanalixozero.app.event;
 
 import android.os.Parcel;
 import android.os.Parcelable;
@@ -13,8 +13,8 @@ public class Event implements Parcelable {
     private String address;
     private Long startsAt;
     private Long endsAt;
-    private String summary;
-    private String details;
+    private String description;
+    private String link;
 
     public Event(
             String title,
@@ -22,15 +22,15 @@ public class Event implements Parcelable {
             String address,
             Long startsAt,
             Long endsAt,
-            String summary,
-            String details) {
+            String description,
+            String link) {
         this.title = title;
         this.placeName = placeName;
         this.address = address;
         this.startsAt = startsAt;
         this.endsAt = endsAt;
-        this.summary = summary;
-        this.details = details;
+        this.description = description;
+        this.link = link;
     }
 
     Event(Parcel in) {
@@ -39,8 +39,8 @@ public class Event implements Parcelable {
         address = in.readString();
         startsAt = in.readLong();
         endsAt = in.readLong();
-        summary = in.readString();
-        details = in.readString();
+        description = in.readString();
+        link = in.readString();
     }
 
     public static final Creator<Event> CREATOR = new Creator<Event>() {
@@ -75,12 +75,12 @@ public class Event implements Parcelable {
         return endsAt;
     }
 
-    public String getSummary() {
-        return summary;
+    public String getDescription() {
+        return description;
     }
 
-    public String getDetails() {
-        return details;
+    public String getLink() {
+        return link;
     }
 
     @Override public int describeContents() {
@@ -93,7 +93,7 @@ public class Event implements Parcelable {
         out.writeString(address);
         out.writeLong(startsAt);
         out.writeLong(endsAt);
-        out.writeString(summary);
-        out.writeString(details);
+        out.writeString(description);
+        out.writeString(link);
     }
 }

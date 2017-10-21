@@ -1,5 +1,6 @@
 <resources>
-    <style name="Widget.SemanaLixoZero" parent="android:Widget" />
+
+    <style name="Widget.SemanaLixoZero" parent="android:Widget"/>
 
     <style name="Widget.SemanaLixoZero.CardDivider">
         <item name="android:layout_width">48dp</item>
@@ -26,7 +27,7 @@
         <item name="contentPadding">@dimen/keyline_large_16dp</item>
     </style>
 
-    <style name="Widget.SemanaLixoZero.Card.Info" />
+    <style name="Widget.SemanaLixoZero.Card.Info"/>
 
     <style name="Widget.SemanaLixoZero.RecyclerView">
         <item name="android:id">@id/recycler_view</item>
