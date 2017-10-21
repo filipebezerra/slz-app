@@ -12,7 +12,7 @@ import br.com.semanalixozero.app.R;
 import butterknife.BindView;
 
 import static android.view.LayoutInflater.from;
-import static br.com.semanalixozero.app.util.FormattingUtils.formatDateTime;
+import static br.com.semanalixozero.app.util.FormattingUtils.getRelativeTimeToNow;
 import static butterknife.ButterKnife.bind;
 
 /**
@@ -37,9 +37,7 @@ class EventAdapter extends RecyclerView.Adapter<EventAdapter.ViewHolder> {
         Event event = events.get(position);
         holder.textViewTitle.setText(event.getTitle());
         holder.textViewPlaceName.setText(event.getPlaceName());
-
-        final String startsAt = formatDateTime("HH'h'mm", event.getStartsAt());
-        holder.textViewStartsAt.setText(context.getString(R.string.event_starts_at, startsAt));
+        holder.textViewStartsAt.setText(getRelativeTimeToNow(event.getStartsAt()));
     }
 
     @Override public int getItemCount() {

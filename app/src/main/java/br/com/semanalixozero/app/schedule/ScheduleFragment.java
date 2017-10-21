@@ -16,7 +16,7 @@ import br.com.semanalixozero.app.event.EventsFragment;
 import br.com.semanalixozero.app.view.TabsFragmentAdapter;
 import butterknife.BindView;
 
-import static br.com.semanalixozero.app.util.FormattingUtils.formatDateTime;
+import static br.com.semanalixozero.app.util.FormattingUtils.formatTime;
 import static br.com.semanalixozero.app.view.TabsFragmentAdapter.createAdapter;
 
 /**
@@ -64,7 +64,7 @@ public class ScheduleFragment extends BaseFragment implements ScheduleContract.V
 
     @Override public void showSchedules(List<Schedule> schedules) {
         for(Schedule schedule : schedules) {
-            final String scheduleDate = formatDateTime("EEE dd/MM", schedule.getTimestamp());
+            final String scheduleDate = formatTime("EEE dd/MM", schedule.getTimestamp());
             fragmentAdapter.add(EventsFragment.create(schedule.getEvents()), scheduleDate);
         }
     }

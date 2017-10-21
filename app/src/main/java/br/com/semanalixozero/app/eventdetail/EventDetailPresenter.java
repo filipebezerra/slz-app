@@ -2,7 +2,7 @@ package br.com.semanalixozero.app.eventdetail;
 
 import br.com.semanalixozero.app.event.Event;
 
-import static br.com.semanalixozero.app.util.FormattingUtils.formatDateTime;
+import static br.com.semanalixozero.app.util.FormattingUtils.formatTime;
 
 /**
  * @author Filipe Bezerra
@@ -19,8 +19,8 @@ class EventDetailPresenter implements EventDetailContract.Presenter {
         view.showEventTitle(event.getTitle());
         view.showEventDescription(event.getDescription());
 
-        final String startsAt = formatDateTime("EEE, dd \'de\' MMMM HH\'h\'mm", event.getStartsAt());
-        final String endsAt = formatDateTime("\'-\'HH\'h\'mm", event.getEndsAt());
+        final String startsAt = formatTime("EEE, dd \'de\' MMMM HH\'h\'mm", event.getStartsAt());
+        final String endsAt = formatTime("\'-\'HH\'h\'mm", event.getEndsAt());
         view.showEventTime(startsAt, endsAt);
     }
 

@@ -29,7 +29,7 @@
         android:layout_height="wrap_content"
         android:paddingBottom="@dimen/keyline_medium_12dp"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-        app:robotoTypeface="roboto_light"
+        app:robotoTypeface="roboto_medium"
         tools:text="Auditório do SECOVI"
         />
 
@@ -39,7 +39,7 @@
         android:layout_height="wrap_content"
         android:paddingBottom="@dimen/keyline_medium_12dp"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-        app:robotoTypeface="roboto_light"
+        app:robotoTypeface="roboto_regular"
         tools:text="Começa às 08h"
         />
 </LinearLayout>
