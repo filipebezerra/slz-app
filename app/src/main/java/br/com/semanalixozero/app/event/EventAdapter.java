@@ -6,15 +6,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
 import java.util.List;
-import java.util.Locale;
 
 import br.com.semanalixozero.app.R;
 import butterknife.BindView;
 
 import static android.view.LayoutInflater.from;
+import static br.com.semanalixozero.app.util.FormattingUtils.formatDateTime;
 import static butterknife.ButterKnife.bind;
 
 /**
@@ -40,12 +38,8 @@ class EventAdapter extends RecyclerView.Adapter<EventAdapter.ViewHolder> {
         holder.textViewTitle.setText(event.getTitle());
         holder.textViewPlaceName.setText(event.getPlaceName());
 
-        Long startsAt = event.getStartsAt();
-        SimpleDateFormat dateFormat = new SimpleDateFormat("HH'h'mm", Locale.getDefault());
-        Calendar calendar = Calendar.getInstance();
-        calendar.setTimeInMillis(startsAt);
-        String format = dateFormat.format(calendar.getTime());
-        holder.textViewStartsAt.setText(context.getString(R.string.event_starts_at, format));
+        final String startsAt = formatDateTime("HH'h'mm", event.getStartsAt());
+        holder.textViewStartsAt.setText(context.getString(R.string.event_starts_at, startsAt));
     }
 
     @Override public int getItemCount() {

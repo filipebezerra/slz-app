@@ -8,10 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
 import java.util.List;
-import java.util.Locale;
 
 import br.com.semanalixozero.app.R;
 import br.com.semanalixozero.app.base.BaseFragment;
@@ -19,6 +16,7 @@ import br.com.semanalixozero.app.event.EventsFragment;
 import br.com.semanalixozero.app.view.TabsFragmentAdapter;
 import butterknife.BindView;
 
+import static br.com.semanalixozero.app.util.FormattingUtils.formatDateTime;
 import static br.com.semanalixozero.app.view.TabsFragmentAdapter.createAdapter;
 
 /**
@@ -66,13 +64,8 @@ public class ScheduleFragment extends BaseFragment implements ScheduleContract.V
 
     @Override public void showSchedules(List<Schedule> schedules) {
         for(Schedule schedule : schedules) {
-            Long timestamp = schedule.getTimestamp();
-            SimpleDateFormat dateFormat = new SimpleDateFormat("EEE dd/MM", Locale.getDefault());
-            Calendar calendar = Calendar.getInstance();
-            calendar.setTimeInMillis(timestamp);
-            String format = dateFormat.format(calendar.getTime());
-
-            fragmentAdapter.add(EventsFragment.create(schedule.getEvents()), format);
+            final String scheduleDate = formatDateTime("EEE dd/MM", schedule.getTimestamp());
+            fragmentAdapter.add(EventsFragment.create(schedule.getEvents()), scheduleDate);
         }
     }
 }
