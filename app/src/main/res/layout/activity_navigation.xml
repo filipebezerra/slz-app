@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context=".navigation.NavigationActivity"
+    >
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/SemanaLixoZero.AppBarOverlay"
+        >
+
+        <android.support.v7.widget.Toolbar
+            android:id="@id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:popupTheme="@style/SemanaLixoZero.PopupOverlay"
+            />
+
+    </android.support.design.widget.AppBarLayout>
+
+    <android.support.v4.view.ViewPager
+        android:id="@id/view_pager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        />
+
+    <devlight.io.library.ntb.NavigationTabBar
+        android:id="@+id/navigation_tab_bar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/navigation_bar_height"
+        android:layout_gravity="bottom"
+        app:ntb_bg_color="@color/very_light_gray"
+        app:ntb_inactive_color="@color/slightly_desaturated_blue"
+        app:ntb_active_color="@color/dark_blue"
+        app:ntb_titled="true"
+        app:ntb_title_mode="active"
+        app:ntb_tinted="true"
+        app:ntb_scaled="false"
+        />
+
+</android.support.design.widget.CoordinatorLayout>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.devspark.robototextview.widget.RobotoTextView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/text_view_header"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/very_soft_blue"
+    android:padding="@dimen/keyline_medium_8dp"
+    android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+    app:robotoTypeface="roboto_light"
+    tools:text="08:00"
+    />

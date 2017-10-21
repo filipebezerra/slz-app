@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="titles_tab_info">
+        <item>A Semana</item>
+        <item>Quem Somos</item>
+        <item>Contato</item>
+        <item>Cidades</item>
+    </string-array>
+
+    <string-array name="city_names">
+        <item>Brasilia</item>
+        <item>Curitiba</item>
+        <item>Florianópolis</item>
+        <item>Goiânia</item>
+        <item>Guarulhos</item>
+        <item>Ituiutaba</item>
+        <item>Niterói</item>
+        <item>Porto Alegre</item>
+        <item>Recife</item>
+        <item>Rio de Janeiro</item>
+        <item>Salvador</item>
+        <item>São Paulo</item>
+        <item>Tubarão</item>
+    </string-array>
+
+    <string-array name="city_paths">
+        <item>brasilia</item>
+        <item>curitiba</item>
+        <item>floripa</item>
+        <item>goiania</item>
+        <item>guarulhos</item>
+        <item>ituiutaba</item>
+        <item>niteroi</item>
+        <item>portoalegre</item>
+        <item>recife</item>
+        <item>riodejaneiro</item>
+        <item>salvador</item>
+        <item>saopaulo</item>
+        <item>tubarao</item>
+    </string-array>
+
+    <integer-array name="palette_colors">
+        <item>0xff7ca3bc</item>
+        <item>0xff0b6a8c</item>
+        <item>0xffb7d651</item>
+        <item>0xff6b8cab</item>
+        <item>0xff35839c</item>
+        <item>0xffa4cc3c</item>
+    </integer-array>
+</resources>

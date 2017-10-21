@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="slightly_desaturated_blue">#7ca3bc</color>
+    <color name="dark_blue">#0b6a8c</color>
+    <color name="very_soft_green">#d1e4a8</color>
+    <color name="moderate_yellow">#b7d651</color>
+    <color name="grayish_cyan">#bad4d7</color>
+    <color name="mostly_desaturated_dark_blue">#6b8cab</color>
+    <color name="dark_moderate_blue">#4d748c</color>
+    <color name="dark_moderate_cyan">#35839c</color>
+    <color name="moderate_green">#a4cc3c</color>
+    <color name="very_soft_blue">#add4ee</color>
+    <color name="very_light_gray">#f5f5f5</color>
+</resources>

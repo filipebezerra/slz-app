@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "219061629329",
+    "firebase_url": "https://semana-lixo-zero-2017.firebaseio.com",
+    "project_id": "semana-lixo-zero-2017",
+    "storage_bucket": "semana-lixo-zero-2017.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:219061629329:android:766f74f7b721d20f",
+        "android_client_info": {
+          "package_name": "br.com.semanalixozero.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "219061629329-1m9e04lljpd40gc65fg43rmjkl0cinjp.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "br.com.semanalixozero.app",
+            "certificate_hash": "9d729494476ac746fc2cc99705d5cd083a1ed073"
+          }
+        },
+        {
+          "client_id": "219061629329-lcafaleiv5cn1hsop1kff8iqu6tktfe8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC5V98soPrIj2RKHHWgEioAv2y3Zm-Ev4w"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "219061629329-lcafaleiv5cn1hsop1kff8iqu6tktfe8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

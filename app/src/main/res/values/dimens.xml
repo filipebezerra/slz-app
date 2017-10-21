@@ -1,0 +1,12 @@
+<resources>
+    <dimen name="navigation_bar_height">60dp</dimen>
+    <dimen name="navigation_tab_height">56dp</dimen>
+
+    <!-- Material design keylines -->
+    <dimen name="keyline_xlarge_32dp">32dp</dimen>
+    <dimen name="keyline_large_24dp">24dp</dimen>
+    <dimen name="keyline_large_16dp">16dp</dimen>
+    <dimen name="keyline_medium_12dp">12dp</dimen>
+    <dimen name="keyline_medium_8dp">8dp</dimen>
+    <dimen name="keyline_small_4dp">4dp</dimen>
+</resources>

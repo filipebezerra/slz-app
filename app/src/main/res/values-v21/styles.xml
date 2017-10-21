@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Widget.SemanaLixoZero.Card.Info">
+        <item name="android:elevation">3dp</item>
+    </style>
+</resources>

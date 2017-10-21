@@ -1,0 +1,57 @@
+<resources>
+    <style name="Widget.SemanaLixoZero" parent="android:Widget" />
+
+    <style name="Widget.SemanaLixoZero.CardDivider">
+        <item name="android:layout_width">48dp</item>
+        <item name="android:layout_height">2dp</item>
+        <item name="android:background">?attr/colorAccent</item>
+        <item name="android:layout_marginTop">@dimen/keyline_large_16dp</item>
+        <item name="android:layout_marginBottom">@dimen/keyline_large_16dp</item>
+        <item name="android:layout_gravity">center_horizontal</item>
+    </style>
+
+    <style name="Widget.SemanaLixoZero.CardContainer">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:paddingLeft">@dimen/keyline_medium_8dp</item>
+        <item name="android:paddingTop">@dimen/keyline_medium_8dp</item>
+        <item name="android:paddingRight">@dimen/keyline_medium_8dp</item>
+        <item name="android:paddingBottom">@dimen/keyline_medium_8dp</item>
+    </style>
+
+    <style name="Widget.SemanaLixoZero.Card" parent="CardView">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="contentPadding">@dimen/keyline_large_16dp</item>
+    </style>
+
+    <style name="Widget.SemanaLixoZero.Card.Info" />
+
+    <style name="Widget.SemanaLixoZero.RecyclerView">
+        <item name="android:id">@id/recycler_view</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:clipToPadding">false</item>
+        <item name="android:scrollbars">vertical</item>
+        <item name="android:scrollbarStyle">outsideOverlay</item>
+        <item name="android:background">@android:color/white</item>
+        <item name="layoutManager">android.support.v7.widget.LinearLayoutManager</item>
+    </style>
+
+    <style name="Widget.SemanaLixoZero.TabLayout" parent="Widget.Design.TabLayout">
+        <item name="android:id">@id/tabs</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="tabMode">fixed</item>
+        <item name="tabGravity">fill</item>
+        <item name="tabIndicatorColor">@color/dark_blue</item>
+        <item name="tabIndicatorHeight">3dp</item>
+        <item name="tabSelectedTextColor">@color/dark_blue</item>
+        <item name="tabTextColor">@color/slightly_desaturated_blue</item>
+    </style>
+
+    <style name="Widget.SemanaLixoZero.TabLayout.Scrollable">
+        <item name="tabMode">scrollable</item>
+    </style>
+</resources>

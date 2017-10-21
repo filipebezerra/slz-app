@@ -1,0 +1,58 @@
+<resources>
+    <string name="app_name">Lixo Zero</string>
+    <string name="title_activity_navigation">Semana Lixo Zero Goiânia</string>
+
+    <string name="title_tab_my_schedule">Minha Semana</string>
+    <string name="title_tab_schedule">Programação</string>
+    <string name="title_tab_feed">Feed</string>
+    <string name="title_tab_info">Informações</string>
+
+    <string name="title_card_about_the_event">Sobre a Semana do Lixo Zero</string>
+    <string name="content_card_about_the_event">
+        A Semana Lixo Zero é uma plataforma mobilizadora por nichos que tem como objetivo
+        empoderar e trazer soluções para que a meta Lixo Zero seja alcançada
+    </string>
+
+    <string name="title_card_gols">Objetivos</string>
+    <string name="content_card_gols">
+        Mobilizar o maior número possível de organizações a realizar um evento Lixo Zero e
+        conscientizar aquela comunidade a se tornar Lixo Zero.
+    </string>
+
+    <string name="title_card_results">Resultados</string>
+    <string name="content_card_results">
+        Sua última edição, em 2014, abrangeu 2 países, 4 estados e 11 cidades participantes,
+        totalizando mais de 400 eventos, com a participação em fóruns, congressos,
+        conferências, cursos, de mais de 22 mil pessoas, estudando a viabilidade de um mundo
+        Lixo Zero.
+    </string>
+
+    <string name="title_card_about_ilzb">Instituto Lixo Zero Brasil</string>
+    <string name="content_card_about_ilzb">
+        O Instituto Lixo Zero Brasil é uma organização civil e sem fins lucrativos que faz parte
+        do Zero Waste International Alliance. Fundado em 2010, com sede em Florianópolis, o
+        instituto tem como objetivo disseminar o conceito de lixo zero e articular programas de
+        conscientização nas empresas, destacando a importância da certificação, reestruturação e
+        controle sobre o lixo que elas produzem.
+    </string>
+
+    <string name="title_card_about_srz">Sociedade Resíduo Zero</string>
+    <string name="content_card_about_srz_zero">
+        A Sociedade Resíduo Zero é um corpo formado por cidadãos, profissionais, estudantes,
+        lideranças, e organizações preocupados com o impacto catastrófico dos resíduos sobre o
+        ambiente e que buscam solucionar esta questão sob uma perspectiva integrada,
+        transdisciplinar, justa, viável, adequada, e democrática.
+    </string>
+
+    <string name="subtitle_card_about_organization">Organização</string>
+    <string name="action_card_about_organization">Visitar site</string>
+    <string name="content_accessibility_cities">Nome das cidades participantes</string>
+    <string name="action_card_contact_via_whatsapp">WhatsApp</string>
+    <string name="subtitle_card_contact_ceo">Diretor Executivo</string>
+    <string name="content_card_contact_ceo_name">Me. Eng. Civil Diógenes Aires</string>
+    <string name="subtitle_card_contact_cco">Gerente de Eventos</string>
+    <string name="content_card_contact_cco_name">Químico Antônio Afonso Bolognani</string>
+    
+    <string name="event_starts_at">Começa às %1$s</string>
+
+</resources>

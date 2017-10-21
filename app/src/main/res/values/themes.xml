@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="SemanaLixoZero" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorPrimaryDark">@color/primary_dark</item>
+        <item name="colorAccent">@color/accent</item>
+        <item name="android:textColorPrimary">@color/dark_blue</item>
+        <item name="colorButtonNormal">@color/dark_blue</item>
+    </style>
+
+    <style name="SemanaLixoZero.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="SemanaLixoZero.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="SemanaLixoZero.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+</resources>

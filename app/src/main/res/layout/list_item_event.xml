@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:gravity="center_vertical"
+    android:paddingBottom="@dimen/keyline_medium_8dp"
+    android:paddingLeft="@dimen/keyline_large_16dp"
+    android:paddingRight="@dimen/keyline_large_16dp"
+    android:paddingTop="@dimen/keyline_medium_8dp"
+    >
+
+    <com.devspark.robototextview.widget.RobotoTextView
+        android:id="@+id/text_view_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingBottom="@dimen/keyline_medium_12dp"
+        android:text="ABERTURA SEMANA LIXO ZERO 2017"
+        android:textAppearance="@style/TextAppearance.AppCompat.Title"
+        app:robotoTypeface="roboto_light"
+        />
+
+    <com.devspark.robototextview.widget.RobotoTextView
+        android:id="@+id/text_view_place_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingBottom="@dimen/keyline_medium_12dp"
+        android:text="Auditório do SECOVI"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        app:robotoTypeface="roboto_light"
+        />
+
+    <com.devspark.robototextview.widget.RobotoTextView
+        android:id="@+id/text_view_starts_at"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingBottom="@dimen/keyline_medium_12dp"
+        android:text="Começa às 08h"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        app:robotoTypeface="roboto_light"
+        />
+</LinearLayout>
