@@ -13,7 +13,10 @@ class EventsPresenter implements EventsContract.Presenter {
     EventsPresenter(EventsContract.View view, List<Event> events) {
         this.view = view;
         this.events = events;
-        view.showEvents(this.events);
+
+        if (!events.isEmpty()) {
+            view.showEvents(this.events);
+        }
     }
 
     @Override public void clickOnEvent(int position) {

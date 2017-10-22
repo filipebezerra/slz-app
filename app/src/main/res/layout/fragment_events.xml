@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -8,6 +9,38 @@
 
     <android.support.v7.widget.RecyclerView
         style="@style/Widget.SemanaLixoZero.RecyclerView"
+        android:visibility="gone"
         tools:listitem="@layout/list_item_event"
         />
+
+    <LinearLayout
+        android:id="@id/empty"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@android:color/transparent"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:visibility="visible"
+        >
+
+        <ImageView
+            android:layout_width="144dp"
+            android:layout_height="144dp"
+            android:layout_marginBottom="@dimen/keyline_large_16dp"
+            android:contentDescription="@string/content_empty_schedule"
+            android:tint="@color/very_soft_blue"
+            app:srcCompat="@drawable/ic_calendar_blank"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:gravity="center"
+            android:text="@string/content_empty_schedule"
+            android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+            />
+    </LinearLayout>
 </FrameLayout>

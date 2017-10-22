@@ -6,6 +6,7 @@ import android.support.annotation.Nullable;
 import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
+import android.widget.LinearLayout;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -39,6 +40,7 @@ public class EventsFragment extends BaseFragment implements EventsContract.View 
     private EventsContract.Presenter presenter;
 
     @BindView(R.id.recycler_view) RecyclerView recyclerView;
+    @BindView(R.id.empty) LinearLayout linearLayoutEmpty;
 
     @Override protected int fragmentViewResource() {
         return R.layout.fragment_events;
@@ -67,6 +69,8 @@ public class EventsFragment extends BaseFragment implements EventsContract.View 
 
                             @Override public void onLongPress(View view, int position) {}
                         }));
+        recyclerView.setVisibility(View.VISIBLE);
+        linearLayoutEmpty.setVisibility(View.GONE);
     }
 
     @Override public void navigateToEventDetail(Event selectedEvent) {
