@@ -14,6 +14,6 @@ interface ScheduleContract {
 
     interface Presenter {
 
-
+        void loadSchedules();
     }
 }

@@ -12,9 +12,10 @@ class SchedulePresenter implements ScheduleContract.Presenter {
 
     SchedulePresenter(ScheduleContract.View view) {
         this.view = view;
+    }
 
+    @Override public void loadSchedules() {
         schedules = MockScheduleDataset.getSchedules();
         view.showSchedules(schedules);
     }
-
 }
