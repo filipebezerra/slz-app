@@ -40,7 +40,6 @@ public class ScheduleFragment extends BaseFragment implements ScheduleContract.V
 
     @Override public void showSchedules(List<Schedule> schedules) {
         ScheduleDayPagerAdapter adapter = createAdapter(getChildFragmentManager(), schedules);
-
         viewPager.setAdapter(adapter);
         viewPager.setCurrentItem(adapter.getToday(), true);
         //tabLayout.setTypeface(obtainTypeface(getContext(), TYPEFACE_ROBOTO_LIGHT));

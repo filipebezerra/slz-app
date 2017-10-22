@@ -34,7 +34,7 @@ class ScheduleDayPagerAdapter extends FragmentPagerAdapter {
     }
 
     private void initialize(List<Schedule> schedules) {
-        int count = 0;
+        int count;
         for(Schedule schedule : schedules) {
             EventsFragment eventsFragment = create(schedule.getEvents());
             String scheduleDate = formatTime("EEE dd/MM", schedule.getTimestamp());
@@ -70,7 +70,7 @@ class ScheduleDayPagerAdapter extends FragmentPagerAdapter {
         return "";
     }
 
-    public int getToday() {
+    int getToday() {
         return today;
     }
 }

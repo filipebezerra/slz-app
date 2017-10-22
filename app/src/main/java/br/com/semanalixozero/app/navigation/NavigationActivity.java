@@ -13,15 +13,12 @@ import java.util.List;
 
 import br.com.semanalixozero.app.R;
 import br.com.semanalixozero.app.base.BaseActivity;
-import br.com.semanalixozero.app.info.InfoFragment;
-import br.com.semanalixozero.app.schedule.ScheduleFragment;
-import br.com.semanalixozero.app.view.FragmentAdapter;
 import butterknife.BindView;
 import devlight.io.library.ntb.NavigationTabBar;
 
 import static android.support.graphics.drawable.VectorDrawableCompat.create;
 import static android.text.Spanned.SPAN_EXCLUSIVE_EXCLUSIVE;
-import static br.com.semanalixozero.app.view.FragmentAdapter.createAdapter;
+import static br.com.semanalixozero.app.navigation.NavigationPagerAdapter.createAdapter;
 import static com.devspark.robototextview.RobotoTypefaces.TYPEFACE_ROBOTO_LIGHT;
 import static com.devspark.robototextview.RobotoTypefaces.obtainTypeface;
 
@@ -52,12 +49,7 @@ public class NavigationActivity extends BaseActivity {
     }
 
     private void setupViewPager() {
-        FragmentAdapter fragmentAdapter = createAdapter(getSupportFragmentManager())
-                //.add(new Fragment())
-                .add(ScheduleFragment.create())
-                //.add(new Fragment())
-                .add(InfoFragment.create());
-        viewPager.setAdapter(fragmentAdapter);
+        viewPager.setAdapter(createAdapter(getSupportFragmentManager()));
     }
 
     private void setupNavigationTabBar() {
