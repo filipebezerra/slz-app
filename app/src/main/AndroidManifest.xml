@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          xmlns:tools="http://schemas.android.com/tools"
-          package="br.com.semanalixozero.app"
-          android:installLocation="auto"
+<manifest
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="br.com.semanalixozero.app"
+    android:installLocation="auto"
     >
+
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:name=".SlzApplication"
@@ -17,10 +20,10 @@
         >
         <activity
             android:name=".navigation.NavigationActivity"
-            android:label="${applicationLabel}"
-            android:theme="@style/SemanaLixoZero.NoActionBar"
-            android:launchMode="singleTop"
             android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize"
+            android:label="${applicationLabel}"
+            android:launchMode="singleTop"
+            android:theme="@style/SemanaLixoZero.NoActionBar"
             >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
@@ -31,15 +34,20 @@
 
         <activity
             android:name=".eventdetail.EventDetailActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize"
             android:parentActivityName=".navigation.NavigationActivity"
             android:theme="@style/SemanaLixoZero.NoActionBar"
-            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize"
             >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="br.com.semanalixozero.app.navigation.NavigationActivity"
                 />
         </activity>
+
+        <meta-data
+            android:name="io.fabric.ApiKey"
+            android:value="4e4eacdeaab81891701a925ab9c1f84c3d512398"
+            />
     </application>
 
 </manifest>

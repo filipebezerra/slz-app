@@ -16,4 +16,8 @@ public class SlzApplication extends BaseApplication {
             }
         });
     }
+
+    @Override protected void initializeFabric() {
+        // Fabric it's not enabled in debug build variant
+    }
 }

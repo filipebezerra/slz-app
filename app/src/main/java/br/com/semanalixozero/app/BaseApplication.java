@@ -13,6 +13,7 @@ public abstract class BaseApplication extends Application {
         super.onCreate();
         applicationInstance = this;
         initializeLogging();
+        initializeFabric();
     }
 
     public static BaseApplication getApplicationInstance() {
@@ -20,4 +21,6 @@ public abstract class BaseApplication extends Application {
     }
 
     protected abstract void initializeLogging();
+
+    protected abstract void initializeFabric();
 }

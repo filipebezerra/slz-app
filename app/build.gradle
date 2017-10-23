@@ -1,4 +1,5 @@
 apply plugin: 'com.android.application'
+apply plugin: 'io.fabric'
 apply plugin: 'me.tatarka.retrolambda'
 apply plugin: 'com.devspark.robototextview.gradle-plugin'
 apply plugin: 'com.getkeepsafe.dexcount'
@@ -49,6 +50,10 @@ ext {
     butterknife = '8.8.1'
 }
 
+repositories {
+    maven { url 'https://maven.fabric.io/public' }
+}
+
 dependencies {
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
@@ -81,6 +86,14 @@ dependencies {
 
     // Material Feature discovery
     compile 'com.getkeepsafe.taptargetview:taptargetview:1.10.0'
+
+    // Fabric
+    compile('com.crashlytics.sdk.android:crashlytics:2.7.1@aar') {
+        transitive = true
+    }
+    compile('com.crashlytics.sdk.android:answers:1.4.1@aar') {
+        transitive = true;
+    }
 }
 
 robototextview {
