@@ -23,14 +23,16 @@ class ScheduleDayPagerAdapter extends FragmentPagerAdapter {
 
     private int today = 0;
 
-    private ScheduleDayPagerAdapter(FragmentManager fm, List<Schedule> schedules) {
+    private ScheduleDayPagerAdapter(FragmentManager fm) {
         super(fm);
-        initialize(schedules);
     }
 
-    static ScheduleDayPagerAdapter createAdapter(
-            @NonNull final FragmentManager fm, @NonNull final List<Schedule> schedules) {
-        return new ScheduleDayPagerAdapter(fm, schedules);
+    static ScheduleDayPagerAdapter createAdapter(@NonNull final FragmentManager fm) {
+        return new ScheduleDayPagerAdapter(fm);
+    }
+
+    void setSchedules(@NonNull final List<Schedule> schedules) {
+        initialize(schedules);
     }
 
     private void initialize(List<Schedule> schedules) {
@@ -47,6 +49,7 @@ class ScheduleDayPagerAdapter extends FragmentPagerAdapter {
                 today = count;
             }
         }
+        notifyDataSetChanged();
     }
 
     @Override public EventsFragment getItem(int position) {

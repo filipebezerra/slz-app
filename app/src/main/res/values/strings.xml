@@ -59,4 +59,6 @@
     <string name="action_share">Compartilhar</string>
     <string name="share_with">Compartilhar usando</string>
     <string name="content_empty_schedule">Não temos programação para este dia</string>
+    <string name="title_discovery_schedule">Descubra as atividades do dia</string>
+    <string name="description_discovery_schedule">Toque na atividade para descobrir mais informações</string>
 </resources>

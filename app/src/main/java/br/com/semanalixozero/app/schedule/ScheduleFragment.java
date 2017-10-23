@@ -4,7 +4,12 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.LinearLayout;
+
+import com.getkeepsafe.taptargetview.TapTargetView;
 
 import java.util.List;
 
@@ -13,6 +18,7 @@ import br.com.semanalixozero.app.base.BaseFragment;
 import butterknife.BindView;
 
 import static br.com.semanalixozero.app.schedule.ScheduleDayPagerAdapter.createAdapter;
+import static com.getkeepsafe.taptargetview.TapTarget.forView;
 
 /**
  * @author Filipe Bezerra
@@ -24,12 +30,18 @@ public class ScheduleFragment extends BaseFragment implements ScheduleContract.V
     }
 
     private ScheduleContract.Presenter presenter;
+    private ScheduleDayPagerAdapter scheduleAdapter;
 
     @BindView(R.id.tabs) TabLayout tabLayout;
     @BindView(R.id.view_pager) ViewPager viewPager;
 
     @Override protected int fragmentViewResource() {
         return R.layout.fragment_schedule;
+    }
+
+    @Nullable @Override public View onCreateView(
+            LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle inState) {
+        return initializeView(super.onCreateView(inflater, container, inState));
     }
 
     @Override public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
@@ -39,10 +51,36 @@ public class ScheduleFragment extends BaseFragment implements ScheduleContract.V
     }
 
     @Override public void showSchedules(List<Schedule> schedules) {
-        ScheduleDayPagerAdapter adapter = createAdapter(getChildFragmentManager(), schedules);
-        viewPager.setAdapter(adapter);
-        viewPager.setCurrentItem(adapter.getToday(), true);
-        //tabLayout.setTypeface(obtainTypeface(getContext(), TYPEFACE_ROBOTO_LIGHT));
-        tabLayout.setupWithViewPager(viewPager);
+        scheduleAdapter.setSchedules(schedules);
+        viewPager.setCurrentItem(scheduleAdapter.getToday(), true);
+    }
+
+    private View initializeView(@Nullable View view) {
+        if (view != null) {
+            scheduleAdapter = createAdapter(getChildFragmentManager());
+            viewPager.setAdapter(scheduleAdapter);
+
+            tabLayout.addOnTabSelectedListener(
+                    new TabLayout.ViewPagerOnTabSelectedListener(viewPager){
+                        @Override public void onTabSelected(TabLayout.Tab tab) {
+                            super.onTabSelected(tab);
+                            if (tab.getPosition() == scheduleAdapter.getToday()) {
+                                displayDiscovery();
+                            }
+                        }
+                    });
+            //tabLayout.setTypeface(obtainTypeface(getContext(), TYPEFACE_ROBOTO_LIGHT));
+            tabLayout.setupWithViewPager(viewPager);
+        }
+        return view;
+    }
+
+    private void displayDiscovery() {
+        LinearLayout tabView = (LinearLayout) ((LinearLayout)
+                tabLayout.getChildAt(0)).getChildAt(viewPager.getCurrentItem());
+
+        TapTargetView.showFor(getActivity(),
+                forView(tabView, getString(R.string.title_discovery_schedule),
+                        getString(R.string.description_discovery_schedule)));
     }
 }
