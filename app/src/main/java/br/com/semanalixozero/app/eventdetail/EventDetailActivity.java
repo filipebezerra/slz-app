@@ -3,19 +3,34 @@ package br.com.semanalixozero.app.eventdetail;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.annotation.IdRes;
 import android.support.annotation.Nullable;
+import android.support.annotation.StringRes;
 import android.support.customtabs.CustomTabsIntent;
 import android.support.v4.content.ContextCompat;
+import android.support.v7.widget.ActionMenuView;
+import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.TextView;
+
+import com.getkeepsafe.taptargetview.TapTarget;
+import com.getkeepsafe.taptargetview.TapTargetSequence;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import br.com.semanalixozero.app.R;
 import br.com.semanalixozero.app.base.BaseActivity;
 import br.com.semanalixozero.app.event.Event;
 import br.com.semanalixozero.app.util.HtmlUtils;
+import br.com.semanalixozero.app.util.ViewUtils;
 import butterknife.BindView;
 import butterknife.OnClick;
+
+import static com.getkeepsafe.taptargetview.TapTarget.forToolbarMenuItem;
+import static com.getkeepsafe.taptargetview.TapTarget.forView;
 
 /**
  * @author Filipe Bezerra
@@ -62,6 +77,7 @@ public class EventDetailActivity extends BaseActivity implements EventDetailCont
 
     @Override public boolean onPrepareOptionsMenu(Menu menu) {
         menu.findItem(R.id.action_map).setVisible(presenter.canOpenMap());
+        initializeDiscovery();
         return super.onPrepareOptionsMenu(menu);
     }
 
@@ -105,5 +121,66 @@ public class EventDetailActivity extends BaseActivity implements EventDetailCont
                 .setShowTitle(true)
                 .build();
         customTabsIntent.launchUrl(this, Uri.parse(uriString));
+    }
+
+    private void initializeDiscovery() {
+        final Toolbar toolbar = findViewById(R.id.toolbar);
+
+        final ActionMenuView actionMenuView = getActionMenuView(toolbar);
+        if (actionMenuView != null) {
+            ViewUtils.onLaidOut(actionMenuView, () -> {
+                List<TapTarget> targets = new ArrayList<>();
+                targets.add(createFabTapTarget());
+
+                if (presenter.canOpenMap()) {
+                    targets.add(createMapMenuItemTapTarget(toolbar));
+                }
+
+                targets.add(createShareMenuItemTapTarget(toolbar));
+
+                displayDiscovery(targets);
+            });
+        }
+    }
+
+    private ActionMenuView getActionMenuView(Toolbar toolbar) {
+        View toolbarChild;
+        for (int i = 0; i < toolbar.getChildCount(); i++) {
+            toolbarChild = toolbar.getChildAt(i);
+
+            if (toolbarChild instanceof ActionMenuView) {
+                return (ActionMenuView) toolbarChild;
+            }
+        }
+
+        return null;
+    }
+
+    private TapTarget createFabTapTarget() {
+        return forView(findViewById(R.id.fab),
+                getString(R.string.title_discovery_event_link),
+                getString(R.string.description_discovery_event_link)).transparentTarget(true);
+    }
+
+    private TapTarget createMapMenuItemTapTarget(Toolbar toolbar) {
+        return createMenuItemTapTarget(toolbar, R.id.action_map,
+                R.string.title_discovery_map_to_event, R.string.description_discovery_map_to_event);
+    }
+
+    private TapTarget createShareMenuItemTapTarget(Toolbar toolbar) {
+        return createMenuItemTapTarget(toolbar, R.id.action_share,
+                R.string.title_discovery_share_event, R.string.description_discovery_share_event);
+    }
+
+    private TapTarget createMenuItemTapTarget(
+            Toolbar toolbar, @IdRes int id, @StringRes int title, @StringRes int description) {
+        return forToolbarMenuItem(toolbar,
+                id, getString(title), getString(description)).transparentTarget(true);
+    }
+
+    private void displayDiscovery(List<TapTarget> targets) {
+        new TapTargetSequence(this)
+                .targets(targets)
+                .start();
     }
 }

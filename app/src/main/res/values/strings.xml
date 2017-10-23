@@ -61,4 +61,19 @@
     <string name="content_empty_schedule">Não temos programação para este dia</string>
     <string name="title_discovery_schedule">Descubra as atividades do dia</string>
     <string name="description_discovery_schedule">Toque na atividade para descobrir mais informações</string>
+
+    <string name="title_discovery_event_link">Obtenha mais informações</string>
+    <string name="description_discovery_event_link">
+        Toque no botão flutuante para obter mais informações desta atividade
+    </string>
+
+    <string name="title_discovery_map_to_event">Descubra como chegar lá</string>
+    <string name="description_discovery_map_to_event">
+        Toque no ícone do menu para descobrir o local desta atividade no mapa
+    </string>
+
+    <string name="title_discovery_share_event">Compartilhe com seus amigos</string>
+    <string name="description_discovery_share_event">
+        Toque no ícone do menu para compartilhar esta atividade
+    </string>
 </resources>
