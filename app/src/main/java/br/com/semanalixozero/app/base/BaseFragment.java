@@ -4,6 +4,7 @@ import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.LayoutRes;
 import android.support.annotation.Nullable;
+import android.support.design.widget.CoordinatorLayout;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -45,5 +46,9 @@ public abstract class BaseFragment extends Fragment {
     @Override public void onDestroyView() {
         unbinder.unbind();
         super.onDestroyView();
+    }
+
+    public CoordinatorLayout getCoordinatorLayout() {
+        return hostActivity.getCoordinatorLayout();
     }
 }

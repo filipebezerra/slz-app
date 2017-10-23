@@ -2,6 +2,7 @@ package br.com.semanalixozero.app.eventdetail;
 
 import br.com.semanalixozero.app.event.Event;
 
+import static br.com.semanalixozero.app.injection.Injector.provideSettings;
 import static br.com.semanalixozero.app.util.FormattingUtils.formatTime;
 
 /**
@@ -46,5 +47,20 @@ class EventDetailPresenter implements EventDetailContract.Presenter {
                 .append(event.getLink())
                 .toString();
         view.shareContent(content);
+    }
+
+    @Override public void checkCanDisplayEventDetailsDiscovery() {
+        if (provideSettings().isUserDiscoveredEventDetails())
+            return;
+
+        view.displayEventDetailsDiscovery();
+    }
+
+    @Override public void clickUserDiscoveredEventDetails() {
+        provideSettings().setUserDiscoveredEventDetails();
+    }
+
+    @Override public void clickUserCancelledEventDetailsDiscovery() {
+        view.displayEventDetailsDiscoveryExplanation();
     }
 }

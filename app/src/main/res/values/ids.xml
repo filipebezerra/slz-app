@@ -5,4 +5,5 @@
     <item name="tabs" type="id"/>
     <item name="recycler_view" type="id"/>
     <item name="empty" type="id"/>
+    <item name="coordinator" type="id" />
 </resources>

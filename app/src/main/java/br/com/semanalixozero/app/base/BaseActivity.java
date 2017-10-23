@@ -3,6 +3,7 @@ package br.com.semanalixozero.app.base;
 import android.os.Bundle;
 import android.support.annotation.LayoutRes;
 import android.support.annotation.Nullable;
+import android.support.design.widget.CoordinatorLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.app.AppCompatDelegate;
 import android.support.v7.widget.Toolbar;
@@ -17,6 +18,7 @@ import static butterknife.ButterKnife.bind;
  */
 public abstract class BaseActivity extends AppCompatActivity {
 
+    @BindView(R.id.coordinator) CoordinatorLayout coordinatorLayout;
     @BindView(R.id.toolbar) @Nullable Toolbar toolbar;
 
     static {
@@ -31,6 +33,10 @@ public abstract class BaseActivity extends AppCompatActivity {
         if (toolbar != null) {
             setSupportActionBar(toolbar);
         }
+    }
+
+    public CoordinatorLayout getCoordinatorLayout() {
+        return coordinatorLayout;
     }
 
     @LayoutRes protected abstract int viewLayoutResource();

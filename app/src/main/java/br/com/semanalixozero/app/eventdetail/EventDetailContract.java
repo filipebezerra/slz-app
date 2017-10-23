@@ -18,6 +18,10 @@ interface EventDetailContract {
         void showEventTime(String startsAt, String endsAt);
 
         void shareContent(String content);
+
+        void displayEventDetailsDiscovery();
+
+        void displayEventDetailsDiscoveryExplanation();
     }
 
     interface Presenter {
@@ -29,5 +33,11 @@ interface EventDetailContract {
         boolean canOpenMap();
 
         void clickMenuShareEvent();
+
+        void checkCanDisplayEventDetailsDiscovery();
+
+        void clickUserDiscoveredEventDetails();
+
+        void clickUserCancelledEventDetailsDiscovery();
     }
 }

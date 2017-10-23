@@ -29,6 +29,7 @@ import br.com.semanalixozero.app.util.ViewUtils;
 import butterknife.BindView;
 import butterknife.OnClick;
 
+import static br.com.semanalixozero.app.util.FeedbackHelper.showLongPeriodFeedback;
 import static com.getkeepsafe.taptargetview.TapTarget.forToolbarMenuItem;
 import static com.getkeepsafe.taptargetview.TapTarget.forView;
 
@@ -77,7 +78,7 @@ public class EventDetailActivity extends BaseActivity implements EventDetailCont
 
     @Override public boolean onPrepareOptionsMenu(Menu menu) {
         menu.findItem(R.id.action_map).setVisible(presenter.canOpenMap());
-        initializeDiscovery();
+        presenter.checkCanDisplayEventDetailsDiscovery();
         return super.onPrepareOptionsMenu(menu);
     }
 
@@ -109,6 +110,14 @@ public class EventDetailActivity extends BaseActivity implements EventDetailCont
         sendIntent.putExtra(Intent.EXTRA_TEXT, content);
         sendIntent.setType("text/plain");
         startActivity(Intent.createChooser(sendIntent, getResources().getText(R.string.share_with)));
+    }
+
+    @Override public void displayEventDetailsDiscovery() {
+        initializeDiscovery();
+    }
+
+    @Override public void displayEventDetailsDiscoveryExplanation() {
+        showLongPeriodFeedback(getCoordinatorLayout(), R.string.message_discovery_explanation);
     }
 
     @OnClick(R.id.fab) void onClickFab() {
@@ -158,18 +167,18 @@ public class EventDetailActivity extends BaseActivity implements EventDetailCont
 
     private TapTarget createFabTapTarget() {
         return forView(findViewById(R.id.fab),
-                getString(R.string.title_discovery_event_link),
-                getString(R.string.description_discovery_event_link)).transparentTarget(true);
+                getString(R.string.title_event_link_discovery),
+                getString(R.string.description_event_link_discovery)).transparentTarget(true);
     }
 
     private TapTarget createMapMenuItemTapTarget(Toolbar toolbar) {
         return createMenuItemTapTarget(toolbar, R.id.action_map,
-                R.string.title_discovery_map_to_event, R.string.description_discovery_map_to_event);
+                R.string.title_map_to_event_discovery, R.string.description_map_to_event_discovery);
     }
 
     private TapTarget createShareMenuItemTapTarget(Toolbar toolbar) {
         return createMenuItemTapTarget(toolbar, R.id.action_share,
-                R.string.title_discovery_share_event, R.string.description_discovery_share_event);
+                R.string.title_share_event_discovery, R.string.description_share_event_discovery);
     }
 
     private TapTarget createMenuItemTapTarget(
@@ -181,6 +190,18 @@ public class EventDetailActivity extends BaseActivity implements EventDetailCont
     private void displayDiscovery(List<TapTarget> targets) {
         new TapTargetSequence(this)
                 .targets(targets)
+                .listener(new TapTargetSequence.Listener() {
+                    @Override public void onSequenceFinish() {
+                        presenter.clickUserDiscoveredEventDetails();
+                    }
+
+                    @Override
+                    public void onSequenceStep(TapTarget lastTarget, boolean targetClicked) {}
+
+                    @Override public void onSequenceCanceled(TapTarget lastTarget) {
+                        presenter.clickUserCancelledEventDetailsDiscovery();
+                    }
+                })
                 .start();
     }
 }

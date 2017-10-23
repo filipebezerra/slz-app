@@ -8,4 +8,8 @@ public interface SettingsHelper {
     void setUserDiscoveredSchedule();
 
     boolean isUserDiscoveredSchedule();
+
+    void setUserDiscoveredEventDetails();
+
+    boolean isUserDiscoveredEventDetails();
 }

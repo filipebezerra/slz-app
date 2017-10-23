@@ -74,7 +74,7 @@ public class ScheduleFragment extends BaseFragment implements ScheduleContract.V
     }
 
     @Override public void displayScheduleDiscoveryExplanation() {
-        showLongPeriodFeedback(this, R.string.message_discovery_explanation);
+        showLongPeriodFeedback(getCoordinatorLayout(), R.string.message_discovery_explanation);
     }
 
     private View initializeView(@Nullable View view) {
@@ -99,7 +99,7 @@ public class ScheduleFragment extends BaseFragment implements ScheduleContract.V
         LinearLayout tabView = (LinearLayout) ((LinearLayout)
                 tabLayout.getChildAt(0)).getChildAt(viewPager.getCurrentItem());
 
-        return forView(tabView, getString(R.string.title_discovery_schedule),
-                getString(R.string.description_discovery_schedule)).transparentTarget(true);
+        return forView(tabView, getString(R.string.title_schedule_discovery),
+                getString(R.string.description_schedule_discovery)).transparentTarget(true);
     }
 }
