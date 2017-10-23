@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 
+import com.getkeepsafe.taptargetview.TapTarget;
 import com.getkeepsafe.taptargetview.TapTargetView;
 
 import java.util.List;
@@ -18,6 +19,7 @@ import br.com.semanalixozero.app.base.BaseFragment;
 import butterknife.BindView;
 
 import static br.com.semanalixozero.app.schedule.ScheduleDayPagerAdapter.createAdapter;
+import static br.com.semanalixozero.app.util.FeedbackHelper.showLongPeriodFeedback;
 import static com.getkeepsafe.taptargetview.TapTarget.forView;
 
 /**
@@ -52,7 +54,27 @@ public class ScheduleFragment extends BaseFragment implements ScheduleContract.V
 
     @Override public void showSchedules(List<Schedule> schedules) {
         scheduleAdapter.setSchedules(schedules);
-        viewPager.setCurrentItem(scheduleAdapter.getToday(), true);
+        //TODO: Fix tabLayout indicator update
+        //viewPager.setCurrentItem(presenter.getToday(), true);
+    }
+
+    @Override public void displayScheduleDiscovery() {
+        TapTargetView.showFor(getActivity(), createTabTapTarget(),
+                new TapTargetView.Listener(){
+                    @Override public void onTargetClick(TapTargetView view) {
+                        super.onTargetClick(view);
+                        presenter.clickUserDiscoveredSchedule();
+                    }
+
+                    @Override public void onTargetCancel(TapTargetView view) {
+                        super.onTargetCancel(view);
+                        presenter.clickUserCancelledScheduleDiscovery();
+                    }
+                });
+    }
+
+    @Override public void displayScheduleDiscoveryExplanation() {
+        showLongPeriodFeedback(this, R.string.message_discovery_explanation);
     }
 
     private View initializeView(@Nullable View view) {
@@ -64,9 +86,7 @@ public class ScheduleFragment extends BaseFragment implements ScheduleContract.V
                     new TabLayout.ViewPagerOnTabSelectedListener(viewPager){
                         @Override public void onTabSelected(TabLayout.Tab tab) {
                             super.onTabSelected(tab);
-                            if (tab.getPosition() == scheduleAdapter.getToday()) {
-                                displayDiscovery();
-                            }
+                            presenter.checkCanDisplayScheduleDiscovery(tab.getPosition());
                         }
                     });
             //tabLayout.setTypeface(obtainTypeface(getContext(), TYPEFACE_ROBOTO_LIGHT));
@@ -75,12 +95,11 @@ public class ScheduleFragment extends BaseFragment implements ScheduleContract.V
         return view;
     }
 
-    private void displayDiscovery() {
+    private TapTarget createTabTapTarget() {
         LinearLayout tabView = (LinearLayout) ((LinearLayout)
                 tabLayout.getChildAt(0)).getChildAt(viewPager.getCurrentItem());
 
-        TapTargetView.showFor(getActivity(),
-                forView(tabView, getString(R.string.title_discovery_schedule),
-                        getString(R.string.description_discovery_schedule)));
+        return forView(tabView, getString(R.string.title_discovery_schedule),
+                getString(R.string.description_discovery_schedule)).transparentTarget(true);
     }
 }

@@ -76,4 +76,8 @@
     <string name="description_discovery_share_event">
         Toque no ícone do menu para compartilhar esta atividade
     </string>
+
+    <string name="message_discovery_explanation">
+        O tutorial é feito para você descobrir como usar o app. Toque na área do círculo para concluir.
+    </string>
 </resources>

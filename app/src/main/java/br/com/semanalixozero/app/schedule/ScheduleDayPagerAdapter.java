@@ -9,7 +9,6 @@ import java.util.List;
 
 import br.com.semanalixozero.app.event.EventsFragment;
 
-import static android.text.format.DateUtils.isToday;
 import static br.com.semanalixozero.app.event.EventsFragment.create;
 import static br.com.semanalixozero.app.util.FormattingUtils.formatTime;
 
@@ -20,8 +19,6 @@ class ScheduleDayPagerAdapter extends FragmentPagerAdapter {
 
     private SparseArray<EventsFragment> fragments = new SparseArray<>();
     private SparseArray<String> titles = new SparseArray<>();
-
-    private int today = 0;
 
     private ScheduleDayPagerAdapter(FragmentManager fm) {
         super(fm);
@@ -44,10 +41,6 @@ class ScheduleDayPagerAdapter extends FragmentPagerAdapter {
             count = fragments.size();
             fragments.put(count, eventsFragment);
             titles.put(count, scheduleDate);
-
-            if (isToday(schedule.getTimestamp())) {
-                today = count;
-            }
         }
         notifyDataSetChanged();
     }
@@ -71,9 +64,5 @@ class ScheduleDayPagerAdapter extends FragmentPagerAdapter {
             return titles.get(position);
         }
         return "";
-    }
-
-    int getToday() {
-        return today;
     }
 }
