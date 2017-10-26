@@ -15,6 +15,8 @@ interface EventDetailContract {
 
         void showEventDescription(String description);
 
+        void showEventPlaceName(String placeName);
+
         void showEventTime(String startsAt, String endsAt);
 
         void shareContent(String content);

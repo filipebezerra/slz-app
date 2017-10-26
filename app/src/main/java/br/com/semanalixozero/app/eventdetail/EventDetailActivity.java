@@ -43,6 +43,7 @@ public class EventDetailActivity extends BaseActivity implements EventDetailCont
     private EventDetailContract.Presenter presenter;
 
     @BindView(R.id.text_view_title) TextView textViewEventTitle;
+    @BindView(R.id.text_view_place_name) TextView textViewPlaceName;
     @BindView(R.id.text_view_time) TextView textViewEventTime;
     @BindView(R.id.text_view_description) TextView textViewEventDescription;
 
@@ -65,6 +66,10 @@ public class EventDetailActivity extends BaseActivity implements EventDetailCont
 
     @Override public void showEventDescription(String description) {
         HtmlUtils.renderHtml(description, textViewEventDescription);
+    }
+
+    @Override public void showEventPlaceName(String placeName) {
+        textViewPlaceName.setText(getString(R.string.event_place_name, placeName));
     }
 
     @Override public void showEventTime(String startsAt, String endsAt) {

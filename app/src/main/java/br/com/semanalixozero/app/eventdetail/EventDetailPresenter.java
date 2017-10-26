@@ -16,13 +16,7 @@ class EventDetailPresenter implements EventDetailContract.Presenter {
     EventDetailPresenter(EventDetailContract.View view, Event event) {
         this.view = view;
         this.event = event;
-
-        view.showEventTitle(event.getTitle());
-        view.showEventDescription(event.getDescription());
-
-        final String startsAt = formatTime("EEE, dd \'de\' MMMM HH\'h\'mm", event.getStartsAt());
-        final String endsAt = formatTime("\'-\'HH\'h\'mm", event.getEndsAt());
-        view.showEventTime(startsAt, endsAt);
+        showEventDetails();
     }
 
     @Override public void clickFab() {
@@ -62,5 +56,15 @@ class EventDetailPresenter implements EventDetailContract.Presenter {
 
     @Override public void clickUserCancelledEventDetailsDiscovery() {
         view.displayEventDetailsDiscoveryExplanation();
+    }
+
+    private void showEventDetails() {
+        final String startsAt = formatTime("EEE, \'das\' HH\'h\'mm", event.getStartsAt());
+        final String endsAt = formatTime("\'às\' HH\'h\'mm", event.getEndsAt());
+
+        view.showEventTitle(event.getTitle());
+        view.showEventPlaceName(event.getPlaceName());
+        view.showEventDescription(event.getDescription());
+        view.showEventTime(startsAt, endsAt);
     }
 }

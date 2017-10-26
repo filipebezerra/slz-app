@@ -53,8 +53,8 @@
     <string name="subtitle_card_contact_cco">Gerente de Eventos</string>
     <string name="content_card_contact_cco_name">Químico Antônio Afonso Bolognani</string>
 
-    <string name="event_starts_at">Começa às %1$s</string>
-    <string name="event_time">%1$s %2$s</string>
+    <string name="event_place_name">Local: %1$s</string>
+    <string name="event_time">Horário: %1$s %2$s</string>
     <string name="action_map">Ver localização</string>
     <string name="action_share">Compartilhar</string>
     <string name="share_with">Compartilhar usando</string>
