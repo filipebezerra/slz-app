@@ -68,8 +68,12 @@ public class EventDetailActivity extends BaseActivity implements EventDetailCont
         HtmlUtils.renderHtml(description, textViewEventDescription);
     }
 
-    @Override public void showEventPlaceName(String placeName) {
+    @Override public void showEventLocation(String placeName) {
         textViewPlaceName.setText(getString(R.string.event_place_name, placeName));
+    }
+
+    @Override public void showEventLocation(String placeName, String address) {
+        textViewPlaceName.setText(getString(R.string.event_place_location, placeName, address));
     }
 
     @Override public void showEventTime(String startsAt, String endsAt) {
@@ -82,30 +86,31 @@ public class EventDetailActivity extends BaseActivity implements EventDetailCont
     }
 
     @Override public boolean onPrepareOptionsMenu(Menu menu) {
-        menu.findItem(R.id.action_map).setVisible(presenter.canOpenMap());
+        menu.findItem(R.id.action_navigation).setVisible(presenter.canOpenNavigation());
         presenter.checkCanDisplayEventDetailsDiscovery();
         return super.onPrepareOptionsMenu(menu);
     }
 
     @Override public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
-            case R.id.action_map:
-                presenter.clickMenuShowLocation();
+            case R.id.action_navigation:
+                presenter.clickMenuNavigation();
                 return true;
             case R.id.action_share:
-                presenter.clickMenuShareEvent();
+                presenter.clickMenuShare();
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
         }
     }
 
-    @Override public void openMap(String address) {
-        Uri uri = Uri.parse("geo:0,0?q=".concat(address.replace(" ", "%20")));
-        Intent intent = new Intent(Intent.ACTION_VIEW);
-        intent.setData(uri);
-        if (intent.resolveActivity(getPackageManager()) != null) {
-            startActivity(intent);
+    @Override public void openNavigation(String address) {
+        Uri gmmIntentUri = Uri.parse("google.navigation:q=".concat(address.replace(" ", "%20")));
+        Intent mapIntent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);
+        mapIntent.setPackage("com.google.android.apps.maps");
+        startActivity(mapIntent);
+        if (mapIntent.resolveActivity(getPackageManager()) != null) {
+            startActivity(mapIntent);
         }
     }
 
@@ -146,7 +151,7 @@ public class EventDetailActivity extends BaseActivity implements EventDetailCont
                 List<TapTarget> targets = new ArrayList<>();
                 targets.add(createFabTapTarget());
 
-                if (presenter.canOpenMap()) {
+                if (presenter.canOpenNavigation()) {
                     targets.add(createMapMenuItemTapTarget(toolbar));
                 }
 
@@ -177,8 +182,8 @@ public class EventDetailActivity extends BaseActivity implements EventDetailCont
     }
 
     private TapTarget createMapMenuItemTapTarget(Toolbar toolbar) {
-        return createMenuItemTapTarget(toolbar, R.id.action_map,
-                R.string.title_map_to_event_discovery, R.string.description_map_to_event_discovery);
+        return createMenuItemTapTarget(toolbar, R.id.action_navigation,
+                R.string.title_navigation_to_event_discovery, R.string.description_navigation_to_event_discovery);
     }
 
     private TapTarget createShareMenuItemTapTarget(Toolbar toolbar) {

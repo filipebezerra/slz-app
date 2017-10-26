@@ -54,8 +54,9 @@
     <string name="content_card_contact_cco_name">Químico Antônio Afonso Bolognani</string>
 
     <string name="event_place_name">Local: %1$s</string>
+    <string name="event_place_location">Local: %1$s, %2$s</string>
     <string name="event_time">Horário: %1$s %2$s</string>
-    <string name="action_map">Ver localização</string>
+    <string name="action_navigation">Ver direções</string>
     <string name="action_share">Compartilhar</string>
     <string name="share_with">Compartilhar usando</string>
     <string name="content_empty_schedule">Não temos programação para este dia</string>
@@ -70,9 +71,9 @@
         Toque no botão flutuante para obter mais informações desta atividade
     </string>
 
-    <string name="title_map_to_event_discovery">Descubra como chegar lá</string>
-    <string name="description_map_to_event_discovery">
-        Toque no ícone do menu para descobrir o local desta atividade no mapa
+    <string name="title_navigation_to_event_discovery">Descubra como chegar lá</string>
+    <string name="description_navigation_to_event_discovery">
+        Toque no ícone do menu para iniciar a navegação pela mapa até esta atividade
     </string>
 
     <string name="title_share_event_discovery">Compartilhe com seus amigos</string>

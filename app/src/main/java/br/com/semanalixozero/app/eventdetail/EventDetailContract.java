@@ -11,11 +11,13 @@ interface EventDetailContract {
 
         void openSite(String uriString);
 
-        void openMap(String address);
+        void openNavigation(String address);
 
         void showEventDescription(String description);
 
-        void showEventPlaceName(String placeName);
+        void showEventLocation(String placeName);
+
+        void showEventLocation(String placeName, String address);
 
         void showEventTime(String startsAt, String endsAt);
 
@@ -30,11 +32,11 @@ interface EventDetailContract {
 
         void clickFab();
 
-        void clickMenuShowLocation();
+        void clickMenuNavigation();
 
-        boolean canOpenMap();
+        boolean canOpenNavigation();
 
-        void clickMenuShareEvent();
+        void clickMenuShare();
 
         void checkCanDisplayEventDetailsDiscovery();
 

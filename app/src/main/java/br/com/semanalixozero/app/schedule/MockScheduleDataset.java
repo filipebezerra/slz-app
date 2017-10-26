@@ -26,7 +26,7 @@ class MockScheduleDataset {
                         new Event(
                                 "Abertura SEMANA LIXO ZERO GOIÂNIA 2017",
                                 "Auditório do SECOVI",
-                                "Av. Fued José Sebba, 1122-1558 - Jardim Goiás, Goiânia - GO",
+                                "Av. Fued José Sebba, 1122-1558 - St. Jardim Goiás",
                                 1508493600000L,
                                 1508508000000L,
                                 "<p>" +
@@ -57,7 +57,7 @@ class MockScheduleDataset {
                         new Event(
                                 "PALESTRA – Gestão Ambiental, Empreendedorismo Social e Sustentabilidade.",
                                 "Faculdade Noroeste",
-                                "Av. Mangalô QD 216, 2385 - St. Morada do Sol, Goiânia - GO, 74475-115",
+                                "Av. Mangalô QD 216, 2385 - St. Morada do Sol",
                                 1508535000000L,
                                 1508544000000L,
                                 "<p>" +
@@ -73,7 +73,7 @@ class MockScheduleDataset {
                         new Event(
                                 "Projeto Catação – Caminhada e coleta voluntária de lixo",
                                 "Parque Flamboyant na ponta de madeira",
-                                "Parque Flamboyant, Goiânia - GO, 74860-210",
+                                "R. 46, s/n - St. Jardim Goiás",
                                 1508583600000L,
                                 1508590800000L,
                                 "<p>Distribuição de mudas e sementes. Ação voluntária de limpeza do Parque</p>",
@@ -81,15 +81,15 @@ class MockScheduleDataset {
                         new Event(
                                 "Feira “GO VEGAN” – Lanches, jardinagem e artesanato",
                                 "Praça do Moreirinha",
-                                "Praça do Moreirinha, AV-T1, S. Bueno",
+                                "Av. T-1, St. Bueno",
                                 1508608800000L,
                                 1508630400000L,
                                 "<p>Feira Vegan, tradicional, lanches, artesanatos e feiras de trocas</p>",
                                 "http://semanalixozero.com.br/goiania/feira-go-vegan/"),
                         new Event(
                                 "Pedal do AVIÃO",
-                                "Praça do Avião, em frente ao ITAÚ",
-                                "Retorno Praça Santos Dumont - St. Aeroporto, Goiânia - GO, 74030-100",
+                                "Praça do Avião em frente ao ITAÚ",
+                                "Av. República do Líbano - St. Aeroporto",
                                 1508607000000L,
                                 0L,
                                 "Pedal Urbano, Iniciante/Moderado",
@@ -138,7 +138,7 @@ class MockScheduleDataset {
                         new Event(
                                 "Aniversário de Goiânia – 84 anos",
                                 "Antigo aeroporto de Goiânia",
-                                "Alameda 4, s/n - Santa Genoveva, Goiânia - GO, 74672-410",
+                                "Alameda 4, s/n - St. Santa Genoveva",
                                 1508839200000L,
                                 1508875200000L,
                                 "<p>" +
@@ -152,7 +152,7 @@ class MockScheduleDataset {
                         new Event(
                                 "VISITA TÉCNICA – Usina de Compostagem CEASA-GO",
                                 "Usina de compostagem CEASA",
-                                "Rodovia BR-153, s/n - Jardim Guanabara, Goiânia - GO, 74675-090",
+                                "Rodovia BR-153, s/n - St. Jardim Guanabara",
                                 1508925600000L,
                                 1508940000000L,
                                 "<p>Ponto de encontro será no auditório do CEASA – perguntar na portaria do CEASA-GO</p>",
@@ -160,7 +160,7 @@ class MockScheduleDataset {
                         new Event(
                                 "DOC ART convida MOOD – filmes do FICA 2017",
                                 "MOOD Club",
-                                "R. 1145, 39 - St. Marista, Goiânia - GO, 74180-220",
+                                "R. 1145, 39 - St. Marista",
                                 1508965200000L,
                                 1508976000000L,
                                 "<p>" +
@@ -186,7 +186,7 @@ class MockScheduleDataset {
                         new Event(
                                 "MINICURSO – SUSTENTABILIDADE EM CONDOMÍNIOS – Parte 1",
                                 "SECOVI Goiânia",
-                                "Av. Fued José Sebba, 1122-1558 - Jardim Goiás, Goiânia - GO",
+                                "Av. Fued José Sebba, 1122-1558 - St. Jardim Goiás",
                                 1509051600000L,
                                 1509062400000L,
                                 "<p>Minicurso de Gestão de Resíduos e boas práticas ambientais em condomínios. Inscrição no site do SECOVI.</p>",
@@ -194,7 +194,7 @@ class MockScheduleDataset {
                         new Event(
                                 "DOC ART convida MOOD para exibir os filmes do FICA 2017",
                                 "MOOD Club",
-                                "R. 1145, 39 - St. Marista, Goiânia - GO, 74180-220",
+                                "R. 1145, 39 - St. Marista",
                                 1509051600000L,
                                 1509062400000L,
                                 "<p>" +
@@ -217,7 +217,7 @@ class MockScheduleDataset {
                         new Event(
                                 "Ciclo de palestras técnicas – Semana de Ciências e Tecnologia",
                                 "Auditório da Faculdade Araguaia",
-                                "Av. T-10, 1047 - St. Bueno, Goiânia - GO, 74175-120",
+                                "Av. T-10, 1047 - St. Bueno",
                                 1509138000000L,
                                 1509145200000L,
                                 "<p>" +
@@ -232,8 +232,8 @@ class MockScheduleDataset {
                                 "http://semanalixozero.com.br/goiania/ciclo-de-palestras-tecnicas-semana-de-ciencias-e-tecnologia/"),
                         new Event(
                                 "MINCURSO – Sustentabilidade em condomínios – Parte 2 – continuação",
-                                "SECOVI",
-                                "Av. Fued José Sebba, 1122-1558 - Jardim Goiás, Goiânia - GO",
+                                "SECOVI Goiânia",
+                                "Av. Fued José Sebba, 1122-1558 - St. Jardim Goiás",
                                 1509138000000L,
                                 1509148800000L,
                                 "<p>MINICURSO de Gestão de Resíduos e boas práticas ambientais em condomínios. Inscrição no site SECOVI.</p>",
@@ -244,8 +244,8 @@ class MockScheduleDataset {
                 new Schedule(1509156000000L, unmodifiableList(asList(
                         new Event(
                                 "Projeto DESAPEGA RESÍDUO ZERO",
-                                "Rua 215, nº 643, Bairro Vila Nova",
-                                "Rua 215, nº 643, Bairro Vila Nova, Goiânia - GO, 74645-140",
+                                "",
+                                "Rua 215, 643 - St. Leste Vila Nova",
                                 1509188400000L,
                                 1509195600000L,
                                 "<p>" +
@@ -257,7 +257,7 @@ class MockScheduleDataset {
                         new Event(
                                 "DOC ART convida MOOD – filmes do FICA 2017",
                                 "MOOD Club",
-                                "R. 1145, 39 - St. Marista, Goiânia - GO, 74180-220",
+                                "R. 1145, 39 - St. Marista",
                                 1509224400000L,
                                 1509235200000L,
                                 "<p>" +
@@ -282,7 +282,7 @@ class MockScheduleDataset {
                         new Event(
                                 "PEDAL LIXO ZERO – Cerimônia de Encerramento da Semana Lixo Zero Goiânia 2017",
                                 "Parque Areião em frente a Polícia Federal",
-                                "Av. Areião, s/n - St. Pedro Ludovico, Goiânia - GO, 74820-370",
+                                "Av. Areião, s/n - St. Pedro Ludovico",
                                 1509274800000L,
                                 1509280200000L,
                                 "<p>" +

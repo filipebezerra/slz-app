@@ -36,7 +36,7 @@ class EventAdapter extends RecyclerView.Adapter<EventAdapter.ViewHolder> {
     @Override public void onBindViewHolder(ViewHolder holder, int position) {
         Event event = events.get(position);
         holder.textViewTitle.setText(event.getTitle());
-        holder.textViewPlaceName.setText(event.getPlaceName());
+        holder.textViewPlaceName.setText(event.getPlaceNameOrAddress());
         holder.textViewStartsAt.setText(getRelativeTimeToNow(event.getStartsAt()));
     }
 

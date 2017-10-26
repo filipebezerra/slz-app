@@ -3,6 +3,8 @@ package br.com.semanalixozero.app.event;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import static br.com.semanalixozero.app.util.StringUtils.isNullOrEmpty;
+
 /**
  * @author Filipe Bezerra
  */
@@ -81,6 +83,10 @@ public class Event implements Parcelable {
 
     public String getLink() {
         return link;
+    }
+
+    public String getPlaceNameOrAddress() {
+        return isNullOrEmpty(getPlaceName()) ? getAddress() : getPlaceName();
     }
 
     @Override public int describeContents() {
