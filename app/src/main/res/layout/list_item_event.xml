@@ -11,6 +11,8 @@
     android:paddingLeft="@dimen/keyline_large_16dp"
     android:paddingRight="@dimen/keyline_large_16dp"
     android:paddingTop="@dimen/keyline_medium_8dp"
+    android:clickable="true"
+    android:background="@drawable/list_selector"
     >
 
     <com.devspark.robototextview.widget.RobotoTextView
